@@ -17,8 +17,13 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats,newsService) {
   $scope.chat = Chats.get($stateParams.chatId);
+
+   /* $scope.newsList=newsService.getNews().then(function(result){
+      alert(JSON.stringify(result));
+    })*/
+
 })
 
 .controller('AccountCtrl', function($scope) {

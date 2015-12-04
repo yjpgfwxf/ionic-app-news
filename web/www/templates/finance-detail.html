@@ -1,0 +1,33 @@
+<ion-view ">
+  <ion-content class="padding">
+    <div class="row responsive-sm">
+      <div class="col textOverflow" >
+        <a href="#/tab/finance/{{finance.ProductNo}}" >{{finance.ProdName}}</a>
+      </div>
+    </div>
+    <div class="row responsive-sm">
+      <div class="col col-50">
+        预期年化收益率:{{finance.ProdProfit}}
+      </div>
+      <div class="col col-50">
+        起购金额:{{finance.PurStarAmo}}
+      </div>
+    </div>
+    <div class="row responsive-sm">
+      <div class="col col-50">
+        收益类型:{{finance.ProdYildType}}
+      </div>
+      <div class="col col-50">
+        产品类型:{{finance.ProdClass}}
+      </div>
+    </div>
+    <div class="row responsive-sm">
+      <div class="col col-50">
+        销售日期:{{finance.ProdSaleDate}}
+      </div>
+      <div class="col col-50">
+        期限:{{finance.ProdLimit}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

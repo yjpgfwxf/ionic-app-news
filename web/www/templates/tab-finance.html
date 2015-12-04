@@ -1,0 +1,48 @@
+<ion-view view-title="银行理财">
+  <ion-content class="padding" on-drag-right="onDragRight()" on-drag-left="onDragLeft()">
+
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      on-refresh="refreshData()">
+    </ion-refresher>
+
+    <ion-item ng-repeat="itemData in financeList">
+      <div class="row responsive-sm">
+        <div class="col textOverflow" >
+          <a href="#/tab/finance/{{itemData.ProductNo}}" >{{itemData.ProdName}}</a>
+        </div>
+      </div>
+      <div class="row responsive-sm">
+        <div class="col col-50">
+          预期年化收益率:{{itemData.ProdProfit}}
+        </div>
+        <div class="col col-50">
+          起购金额:{{itemData.PurStarAmo}}
+        </div>
+      </div>
+      <div class="row responsive-sm">
+        <div class="col col-50">
+          收益类型:{{itemData.ProdYildType}}
+        </div>
+        <div class="col col-50">
+          产品类型:{{itemData.ProdClass}}
+        </div>
+      </div>
+      <div class="row responsive-sm">
+        <div class="col col-50">
+          销售日期:{{itemData.ProdSaleDate}}
+        </div>
+        <div class="col col-50">
+          期限:{{itemData.ProdLimit}}
+        </div>
+      </div>
+    </ion-item>
+
+    <ion-infinite-scroll
+      ng-if="isMoreData"
+      on-infinite="loadMore()"
+      immediate-check="false"
+      distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
